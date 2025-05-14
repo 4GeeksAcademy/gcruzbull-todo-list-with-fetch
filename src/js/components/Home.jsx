@@ -16,14 +16,6 @@ const Home = () => {
 		
 		</>
 	);
-
-		// <div className="d-flex flex-column vh-100 bg-light">
-		// 	<div className="form-floating align-items-center justify-content-center">
-		// 		<h1 className="text-center">todos</h1>
-		// 		<input className="form-control m-5" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
-		// 		</input>
-		// 	</div>
-		// </div>
 	
 };
 
