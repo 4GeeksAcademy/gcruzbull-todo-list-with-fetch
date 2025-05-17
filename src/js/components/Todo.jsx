@@ -23,6 +23,17 @@ export const Todo = () => {
         }
     }
 
+    const deleteTask = (index) => {
+        console.log(index);
+        const todosFiltrados = todos.filter((item, indice) => {
+            console.log(item, indice)
+            return (
+                index === indice ? false : true
+            )
+        })
+        setTodos(todosFiltrados) 
+    }
+
     return (
         <div>
             <input type="text" placeholder="What needs to be done?" className="form-control text-center border-0 border-bottom rounded-0 px-4 py-3" 
@@ -31,7 +42,7 @@ export const Todo = () => {
             <ul className="list-group">
                 {todos.map((item, index)=>{
                     return (
-                        <li key={index} className="list-group-item mt-2 d-flex justify-content-between align-items-center"><span>{item}</span><button className="btn btn-danger">X</button></li>
+                        <li key={index} className="list-group-item mt-2 d-flex justify-content-between align-items-center"><span>{item}</span><button className="btn btn-danger" onClick={() => {deleteTask(index)}}>X</button></li>
                     )
                 })}
                 
