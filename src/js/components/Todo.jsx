@@ -42,7 +42,10 @@ export const Todo = () => {
             <ul className="list-group">
                 {todos.map((item, index)=>{
                     return (
-                        <li key={index} className="list-group-item mt-2 d-flex justify-content-between align-items-center"><span>{item}</span><button className="btn btn-danger" onClick={() => {deleteTask(index)}}>X</button></li>
+                        <li key={index} className="todo list-group-item mt-2 d-flex justify-content-between align-items-center">
+                            <span>{item}</span>
+                            <button className="btn btn-danger" onClick={() => {deleteTask(index)}}>X</button>
+                        </li>
                     )
                 })}
                 
