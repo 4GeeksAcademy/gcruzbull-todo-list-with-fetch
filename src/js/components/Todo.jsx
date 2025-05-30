@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Todo = () => {
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState('');
+
+useEffect (() => {
+    const getTodos = async () => {
+        try {
+            const response = await fetch("https://playground.4geeks.com/todo/users/Guillermo")
+            const data = await response.json()      // transforma a formato JS con la funcion json()
+            setTodos(data.todos)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    getTodos()
+}, [])
+
 
     const validateInput = () => {
         if(inputValue === "") {
@@ -43,7 +57,7 @@ export const Todo = () => {
                 {todos.map((item, index)=>{
                     return (
                         <li key={index} className="todo list-group-item mt-2 d-flex justify-content-between align-items-center">
-                            <span>{item}</span>
+                            <span>{item.label}</span>
                             <button className="btn btn-danger" onClick={() => {deleteTask(index)}}>X</button>
                         </li>
                     )
