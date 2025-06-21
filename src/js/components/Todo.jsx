@@ -95,7 +95,7 @@ export const Todo = () => {
             })
             setTodos(todosFiltrados);
         } else {
-            console.log('Error al eliminar en el backend:', response.status, response.statusText);
+            console.log('Error al eliminar:', response.status, response.statusText);
         }
         } catch (error) {
             console.error('Error en la llamada DELETE:', error);
